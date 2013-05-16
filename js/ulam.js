@@ -56,7 +56,10 @@
                 ctx.fillStyle = "rgb(" + randInt(30,225) + "," + randInt(30,225) + "," + randInt(30,225) +")";
                 ctx.fillRect (coords[0], coords[1], Spiral.scale, Spiral.scale);
             }
-            window.setTimeout(drawUlamSpiral, 10);
+        } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            Spiral.init();
         }
+        window.setTimeout(drawUlamSpiral, 10);
     })();
 })();
