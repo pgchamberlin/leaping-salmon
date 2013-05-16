@@ -11,6 +11,11 @@
         n: 0, // iterations: how many times should be go this direction?
         current_coords: [],
         init: function () {
+            this.i = 0;
+            this.d = 0;
+            this.di = 0;
+            this.ii = 0;
+            this.n = 0;
             this.current_coords = [ (((this.dimensions * this.scale) - this.scale) / 2 - this.scale), ((this.dimensions * this.scale) - this.scale) / 2 ];
         },
         nextCoords: function () {
@@ -57,7 +62,7 @@
                 ctx.fillRect (coords[0], coords[1], Spiral.scale, Spiral.scale);
             }
         } else {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, Spiral.dimensions * Spiral.scale, Spiral.dimensions * Spiral.scale);
             Spiral.init();
         }
         window.setTimeout(drawUlamSpiral, 10);
